@@ -1,0 +1,43 @@
+=====================================================================
+CS2110                        Lab 19                      Spring 2017
+=====================================================================
+ 
+Objective: Use DMA to perform memset/memcpy in GBA games
+ 
+This is a lab where you will use DMA in two different ways to copy data on the
+GBA.
+
+Note: You may not use the provided .s files for your homework.
+
+
+
+Assignment
+----------
+In both of the provided C files, edit them appropriately to replace the given
+for loops with DMA. main is designed to halt your code after some amount of
+time if the drawing code is too slow, so even though the for loop
+implementations are correct, they will not be able to draw the full screen.
+However, DMA is much faster and will be capable of drawing it before time runs
+out!
+
+    clearscreen:
+
+        An image will be drawn to the screen. Your job is to use DMA to clear
+        the screen after it has been drawn. A correct solution won't use any
+        iteration at all and will result in a completely black screen.
+
+    copydata:
+
+        A fullscreen image and a row number will be passed into the function,
+        which should draw only the specified row to the videoBuffer. A correct
+        solution won't use any iteration at all. When this is completed our code will iterate over all the rows and use your code to draw each row one at a time resulting in THE ENTIRE IMAGE being drawn to the screen.
+
+
+
+Submission Instructions
+-----------------------
+
+Please submit all files as a tar archive:
+
+tar -czvf lab19.tar.gz clearscreen copydata
+

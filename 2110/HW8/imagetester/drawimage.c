@@ -1,0 +1,14 @@
+// Put any additional header includes here
+
+#include "puppy.h"
+//#include "fortheboys.h"
+
+void drawImage(int width, int height, const unsigned short *image_data);
+void draw_an_image() {
+
+    // Make a call to draw the image here
+    drawImage(PUPPY_WIDTH, PUPPY_HEIGHT, puppy_data);
+    //drawImage(FORTHEBOYS_WIDTH, FORTHEBOYS_HEIGHT, fortheboys_data);
+
+}
+

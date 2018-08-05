@@ -1,0 +1,5 @@
+1. The purpose of a splitter/jointer is to individually access each bit from a multi-bit input in your circuit.
+
+2. Tunnels are useful to make it easier to see the output of your circuit with a certain label without having to find the actual output.
+
+3. 010 gives you an output of 0 - no umbrella. 100 gives you an output of 1 - bring an umbrella. After all, the weatherman said so.

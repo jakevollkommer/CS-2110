@@ -1,0 +1,168 @@
+CS2110 Spring 2017 Practice Final Exam
+
+For questions like these we would give you any man pages needed so feel
+ free to refer to man pages.
+
+Also, study, try and take the test. Now go back and figure out what you
+think are the answers. Feel free to discuss with your course instructor
+your TA's and your classmates.
+
+As we indicated in class we don't release answers as research shows this
+is counter productive to learning. You will retain things you research,
+try coding etc.
+
+Therefor please do not post complete solutions thinking you are helping
+your classmates.
+
+
+Static vs Automatic
+
+	1P. There are six important keywords you should know about if you
+	are a C programmer:
+	
+	static
+	auto
+	const
+	volatile
+	register
+	extern
+	
+	Explain what each does and give examples.
+
+	
+
+Compiling
+
+	2p. Create an empty directory. Write a small c program in a file
+		called main.c. Have it call a function. Put the function in
+		another c file and write a header file which can be included in
+		main.c. All these files should be in the newly created
+		directory.
+		
+		Compile it from the command line (no make file) with:
+		
+		gcc -o program.exe main.c myLib.c -save-temps
+		
+		Examine each of the files that are now in the directory.
+		Explain what each of them is, what's in it, what's it used for,
+		etc.
+
+Swap/Pointers/Passing Parameters
+
+	3p. Write a function to swap two integers. 
+	
+		How does C pass parameters? Why is swap used to illustrate a
+		different kind of parameter passing? (Hint: Google "What's the
+		difference between passing by reference vs. passing by value?"
+		
+		If you were given any data type how would you write a function 
+		to swap the values of two variables of that type? 
+
+
+Bitwise Operators/Memory Structure
+
+	4p. Write a function called pack that will take in two unsigned ints
+		as parameters and will pack them into an unsigned long long
+		(assume ints are 4 bytes and long longs are 8 bytes). Return the
+		unsigned long long.
+
+		Now write a second function called unpack. This function will have 
+		3 parameters. An unsigned long long and the address of two unsigned
+		ints. The function will extract the two ints and return them to the
+		caller via the two ints whose addresses were passed in.
+	
+
+Sizeof	
+
+5p. Given these declarations on some GBA code
+
+	char c;
+	short s;
+	int i;
+	char *cp;
+	short *sp;
+	int *ip;
+	
+	What would the compiler return for each of these sizeof
+	operations?
+	
+	sizeof(c) = _________
+	
+	sizeof(s) = _________
+	
+	sizeof(i) = _________
+	
+	sizeof(cp) = _________
+	
+	sizeof(sp) = _________
+	
+	sizeof(ip) = _________
+	
+	Why is it important to use sizeof?
+	
+	
+	 
+
+Structure Pointers
+
+	6p. A friend says to you, "I prefer to pass structs into functions
+		as opposed to the address of structs. It's easier for me to
+		understand and I don't get what's the big deal?"
+
+		What do you tell him?
+
+Function Pointers	
+
+	7p. Just for fun. Look up some simple integer sorting algorithm in C
+		on Google. Convert it into your own version of qsort and call it
+		myqsort.
+		
+		It should have this prototype:
+		
+		void myqsort(void *arr, size_t nelems, size_t elemsize,
+		int (*compare) (const void *, const void *));
+		
+Realloc	
+	
+	8p. Assume you have a function like this:
+
+		size_t getAlloc(void *ptr);
+		
+		If you call it and pass in a pointer to any malloced block of
+		memory it will tell you how many bytes were allocated.
+		
+		Using this function and the realloc man page write realloc.
+
+Dynamic Allocation
+
+	9p. Who is your best friend if you are told to read in n characters
+		and you don't know the value of n until run time?
+
+		Just for fun read in an ascii file using fread, bitwise
+		complement each byte, write out to a new file and see what you
+		get. If you want to see a file dump in hex use: od -x filename
+
+Pointers
+	
+	10p. Assume you have an array called image which is an array of
+		19,200 shorts representing an image half the height of the GBA
+		screen.
+
+		Write a function called place which has the following prototype:
+
+		void place(const unsigned short *img, int startrow, 
+		unsigned short color);
+
+		Your function could be passed in your image array and a number
+		like 50 and a color like RED.
+
+		It will color rows 1 to 49 RED, put the image in rows 50 through
+		129, and then put the color RED in rows 130 to 159.
+
+		You can do this all with DMA. You don't need any for loops.
+
+		You can assume that you will have all the DMA #defines, etc.
+
+
+
+	

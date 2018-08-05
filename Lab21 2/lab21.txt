@@ -1,0 +1,40 @@
+1.
+
+a.x = 32, a.y = HELLO, b.x = 32, b.y = HELLO
+a.x = 27, a.y = JELLO, b.x = 32, b.y = JELLO
+
+A. b.y should not be changed when a.y is changed. This happens because a.y and
+b.y point to the same object in memory. Copying the struct should copy the values of all the attributes rather than the reference to the object. i.e. it should make deep copies of all the attributes.
+
+B. dest -> x = (*src).x;
+   dest -> y = strdup(src -> y);
+
+C. a.x = 32, a.y = HELLO, b.x = 32, b.y = HELLO
+   a.x = 27, a.y = JELLO, b.x = 32, b.y = HELLO
+
+This works because instead of using pointers, you are referencing the values
+at the memory location.
+
+D. A shallow copy copies references to the object and stores them as identical
+locations in memory. A deep copy will store the values into the new copy
+without pointing it to the same object in memory.
+
+
+sizeof
+
+1. char - 1 byte
+2. short - 2 bytes
+3. int - 4 bytes
+4. long - 8 bytes
+5. char* - 8 bytes
+6. int* - 8 bytes
+7. void* - 8 bytes
+8. int** - 8 bytes
+9. 2 bytes
+10. 8 bytes
+
+E. 5/10 correct on the first try
+
+F. because you might need more space for a specific type at some point
+
+
